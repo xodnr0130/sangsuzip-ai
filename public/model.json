@@ -13,11 +13,7 @@
           {
             "class_name": "InputLayer",
             "config": {
-              "batch_input_shape": [
-                null,
-                30,
-                2
-              ],
+              "batch_input_shape": [null, 30, 2],
               "dtype": "float32",
               "sparse": false,
               "ragged": false,
@@ -30,11 +26,7 @@
               "name": "gru_12",
               "trainable": true,
               "dtype": "float32",
-              "batch_input_shape": [
-                null,
-                30,
-                2
-              ],
+              "batch_input_shape": [null, 30, 2],
               "return_sequences": true,
               "return_state": false,
               "go_backwards": false,
@@ -72,7 +64,7 @@
               "dropout": 0.0,
               "recurrent_dropout": 0.0,
               "implementation": 2,
-              "reset_after": true
+              "reset_after": false
             }
           },
           {
@@ -129,7 +121,7 @@
               "dropout": 0.0,
               "recurrent_dropout": 0.0,
               "implementation": 2,
-              "reset_after": true
+              "reset_after": false
             }
           },
           {
@@ -230,7 +222,7 @@
           "learning_rate": 0.0010000000474974513,
           "beta_1": 0.9,
           "beta_2": 0.999,
-          "epsilon": 1e-07,
+          "epsilon": 1e-7,
           "amsgrad": false
         }
       }
@@ -238,86 +230,56 @@
   },
   "weightsManifest": [
     {
-      "paths": [
-        "group1-shard1of1.bin"
-      ],
+      "paths": ["group1-shard1of1.bin"],
       "weights": [
         {
           "name": "dense_10/kernel",
-          "shape": [
-            10,
-            1
-          ],
+          "shape": [10, 1],
           "dtype": "float32"
         },
         {
           "name": "dense_10/bias",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "float32"
         },
         {
           "name": "dense_9/kernel",
-          "shape": [
-            64,
-            10
-          ],
+          "shape": [64, 10],
           "dtype": "float32"
         },
         {
           "name": "dense_9/bias",
-          "shape": [
-            10
-          ],
+          "shape": [10],
           "dtype": "float32"
         },
         {
           "name": "gru_12/gru_cell_2/kernel",
-          "shape": [
-            2,
-            192
-          ],
+          "shape": [2, 192],
           "dtype": "float32"
         },
         {
           "name": "gru_12/gru_cell_2/recurrent_kernel",
-          "shape": [
-            64,
-            192
-          ],
+          "shape": [64, 192],
           "dtype": "float32"
         },
         {
           "name": "gru_12/gru_cell_2/bias",
-          "shape": [
-            2,
-            192
-          ],
+          "shape": [2, 192],
           "dtype": "float32"
         },
         {
           "name": "gru_13/gru_cell_3/kernel",
-          "shape": [
-            64,
-            192
-          ],
+          "shape": [64, 192],
           "dtype": "float32"
         },
         {
           "name": "gru_13/gru_cell_3/recurrent_kernel",
-          "shape": [
-            64,
-            192
-          ],
+          "shape": [64, 192],
           "dtype": "float32"
         },
         {
           "name": "gru_13/gru_cell_3/bias",
-          "shape": [
-            2,
-            192
-          ],
+          "shape": [2, 192],
           "dtype": "float32"
         }
       ]
