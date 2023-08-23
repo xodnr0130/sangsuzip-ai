@@ -8,52 +8,44 @@
     "model_config": {
       "class_name": "Sequential",
       "config": {
-        "name": "sequential_6",
+        "name": "sequential_2",
         "layers": [
           {
             "class_name": "InputLayer",
             "config": {
-              "batch_input_shape": [null, 30, 2],
+              "batch_input_shape": [null, 30, 3],
               "dtype": "float32",
               "sparse": false,
               "ragged": false,
-              "name": "gru_12_input"
+              "name": "gru_4_input"
             }
           },
           {
             "class_name": "GRU",
             "config": {
-              "name": "gru_12",
+              "name": "gru_4",
               "trainable": true,
               "dtype": "float32",
-              "batch_input_shape": [null, 30, 2],
+              "batch_input_shape": [null, 30, 3],
               "return_sequences": true,
               "return_state": false,
               "go_backwards": false,
               "stateful": false,
               "unroll": false,
               "time_major": false,
-              "units": 64,
+              "units": 32,
               "activation": "tanh",
               "recurrent_activation": "sigmoid",
               "use_bias": true,
               "kernel_initializer": {
                 "class_name": "GlorotUniform",
-                "config": {
-                  "seed": null
-                }
+                "config": { "seed": null }
               },
               "recurrent_initializer": {
                 "class_name": "Orthogonal",
-                "config": {
-                  "gain": 1.0,
-                  "seed": null
-                }
+                "config": { "gain": 1.0, "seed": null }
               },
-              "bias_initializer": {
-                "class_name": "Zeros",
-                "config": {}
-              },
+              "bias_initializer": { "class_name": "Zeros", "config": {} },
               "kernel_regularizer": null,
               "recurrent_regularizer": null,
               "bias_regularizer": null,
@@ -70,7 +62,7 @@
           {
             "class_name": "Dropout",
             "config": {
-              "name": "dropout_12",
+              "name": "dropout_4",
               "trainable": true,
               "dtype": "float32",
               "rate": 0.2,
@@ -81,7 +73,7 @@
           {
             "class_name": "GRU",
             "config": {
-              "name": "gru_13",
+              "name": "gru_5",
               "trainable": true,
               "dtype": "float32",
               "return_sequences": true,
@@ -96,21 +88,13 @@
               "use_bias": true,
               "kernel_initializer": {
                 "class_name": "GlorotUniform",
-                "config": {
-                  "seed": null
-                }
+                "config": { "seed": null }
               },
               "recurrent_initializer": {
                 "class_name": "Orthogonal",
-                "config": {
-                  "gain": 1.0,
-                  "seed": null
-                }
+                "config": { "gain": 1.0, "seed": null }
               },
-              "bias_initializer": {
-                "class_name": "Zeros",
-                "config": {}
-              },
+              "bias_initializer": { "class_name": "Zeros", "config": {} },
               "kernel_regularizer": null,
               "recurrent_regularizer": null,
               "bias_regularizer": null,
@@ -127,7 +111,7 @@
           {
             "class_name": "Dropout",
             "config": {
-              "name": "dropout_13",
+              "name": "dropout_5",
               "trainable": true,
               "dtype": "float32",
               "rate": 0.2,
@@ -138,33 +122,7 @@
           {
             "class_name": "Dense",
             "config": {
-              "name": "dense_9",
-              "trainable": true,
-              "dtype": "float32",
-              "units": 10,
-              "activation": "relu",
-              "use_bias": true,
-              "kernel_initializer": {
-                "class_name": "GlorotUniform",
-                "config": {
-                  "seed": null
-                }
-              },
-              "bias_initializer": {
-                "class_name": "Zeros",
-                "config": {}
-              },
-              "kernel_regularizer": null,
-              "bias_regularizer": null,
-              "activity_regularizer": null,
-              "kernel_constraint": null,
-              "bias_constraint": null
-            }
-          },
-          {
-            "class_name": "Dense",
-            "config": {
-              "name": "dense_10",
+              "name": "dense_2",
               "trainable": true,
               "dtype": "float32",
               "units": 1,
@@ -172,14 +130,9 @@
               "use_bias": true,
               "kernel_initializer": {
                 "class_name": "GlorotUniform",
-                "config": {
-                  "seed": null
-                }
+                "config": { "seed": null }
               },
-              "bias_initializer": {
-                "class_name": "Zeros",
-                "config": {}
-              },
+              "bias_initializer": { "class_name": "Zeros", "config": {} },
               "kernel_regularizer": null,
               "bias_regularizer": null,
               "activity_regularizer": null,
@@ -232,56 +185,30 @@
     {
       "paths": ["group1-shard1of1.bin"],
       "weights": [
+        { "name": "dense_2/kernel", "shape": [64, 1], "dtype": "float32" },
+        { "name": "dense_2/bias", "shape": [1], "dtype": "float32" },
         {
-          "name": "dense_10/kernel",
-          "shape": [10, 1],
+          "name": "gru_4/gru_cell_4/kernel",
+          "shape": [3, 96],
           "dtype": "float32"
         },
         {
-          "name": "dense_10/bias",
-          "shape": [1],
+          "name": "gru_4/gru_cell_4/recurrent_kernel",
+          "shape": [32, 96],
+          "dtype": "float32"
+        },
+        { "name": "gru_4/gru_cell_4/bias", "shape": [96], "dtype": "float32" },
+        {
+          "name": "gru_5/gru_cell_5/kernel",
+          "shape": [32, 192],
           "dtype": "float32"
         },
         {
-          "name": "dense_9/kernel",
-          "shape": [64, 10],
-          "dtype": "float32"
-        },
-        {
-          "name": "dense_9/bias",
-          "shape": [10],
-          "dtype": "float32"
-        },
-        {
-          "name": "gru_12/gru_cell_2/kernel",
-          "shape": [2, 192],
-          "dtype": "float32"
-        },
-        {
-          "name": "gru_12/gru_cell_2/recurrent_kernel",
+          "name": "gru_5/gru_cell_5/recurrent_kernel",
           "shape": [64, 192],
           "dtype": "float32"
         },
-        {
-          "name": "gru_12/gru_cell_2/bias",
-          "shape": [2, 192],
-          "dtype": "float32"
-        },
-        {
-          "name": "gru_13/gru_cell_3/kernel",
-          "shape": [64, 192],
-          "dtype": "float32"
-        },
-        {
-          "name": "gru_13/gru_cell_3/recurrent_kernel",
-          "shape": [64, 192],
-          "dtype": "float32"
-        },
-        {
-          "name": "gru_13/gru_cell_3/bias",
-          "shape": [2, 192],
-          "dtype": "float32"
-        }
+        { "name": "gru_5/gru_cell_5/bias", "shape": [192], "dtype": "float32" }
       ]
     }
   ]
